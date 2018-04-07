@@ -4,6 +4,8 @@
 <head>
   <title>{{title}}</title>
   <link href="{% static app_name|add:"/first_style.css" %}" rel="stylesheet">
+
+  {% comment %} <link href="{% static app_name|add:"/vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet"> {% endcomment %}
 </head>
 
 <body>
@@ -16,19 +18,19 @@
     <nav class="nav">
       <ul>
         <li>
-          <a href="{% url 'app:home2' %}">Pretoria</a>
+          <a href="#">Pretoria</a>
         </li>
         <li>
           <a href="#">Johannesburg</a>
         </li>
         <li>
-          <a href="{% url 'app:home3' %}">Durban</a>
+          <a href="#">Durban</a>
         </li>
       </ul>
     </nav>
 
     <article class="article">
-      <h1>Pretoria</h1>
+      <h1>Johannesburg</h1>
       <p>London is the capital city of SA. It is the most populous city in SA, with a metropolitan area
         of over 13 million inhabitants.</p>
       <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding

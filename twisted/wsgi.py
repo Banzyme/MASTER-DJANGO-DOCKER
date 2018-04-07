@@ -11,6 +11,7 @@ import os
 from decouple import config
 
 from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
 
 # if not config('DEBUG'):
 #     print ( config('DEBUG') )
@@ -22,3 +23,4 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "twisted.production_settings")
 #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "twisted.settings")
 
 application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
