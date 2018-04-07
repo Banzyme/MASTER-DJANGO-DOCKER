@@ -12,8 +12,8 @@ echo -n "Done setting up postgres (y/n)? "
 read answer
 if [[ "$answer"=="y" || "$answer"=="Y" ]] ;then
     docker-compose up
-    netstat -lnp | grep 5000
-      
+    #netstat -lnp | grep 5000
+
 else
     echo "Please set-up postgres then run,docker-compose up"
     exit

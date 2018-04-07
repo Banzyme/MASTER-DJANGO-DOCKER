@@ -6,6 +6,8 @@
  COPY requirements.txt /code/
  RUN pip install -r requirements.txt
  ADD . /code/
- CMD python3 manage.py runserver 0.0.0.0:$PORT
- # CMD gunicorn -b 0.0.0.0:$PORT --log-file -
+ #CMD python3 manage.py runserver 0.0.0.0:$PORT
+ CMD python3 manage.py makemigrations &&\
+     python3 manage.py migrate &&\
+     gunicorn twisted.wsgi -b 0.0.0.0:$PORT --log-file -
  #ENTRYPOINT [ "executable" ]

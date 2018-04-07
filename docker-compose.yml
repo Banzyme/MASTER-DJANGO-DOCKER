@@ -3,8 +3,10 @@ version: '3'
 services:
   db:
     image: postgres
+    container_name: postgres01
   web:
     build: .
+    container_name: django01
     env_file: .env
     volumes:
       - .:/code
