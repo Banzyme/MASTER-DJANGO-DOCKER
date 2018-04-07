@@ -1,10 +1,9 @@
 from .settings import *
 
-# Overide dev variables
+
 DEBUG=False
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '.amazonaws.com']
-# Chaneg this setting to allow your host only!!! This is after you've registered a domain name
 
 DATABASES = {
     'default': dj_database_url.config(
@@ -12,7 +11,7 @@ DATABASES = {
     )
 }
 
-
+# AWS S3 CDN settings
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default=None)
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=None)
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default=None)
@@ -26,7 +25,6 @@ STATICFILES_LOCATION = 'static'
 MEDIAFILES_LOCATION = 'media'
 
 # Overide normal django static files settings
-
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
